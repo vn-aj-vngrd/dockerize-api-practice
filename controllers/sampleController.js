@@ -3,7 +3,7 @@ exports.helloWorld = (req, res) => {
 }
 
 exports.helloWorldWithCustomName = (req, res) => {
-    res.send(`Hello World from Docker! Written by ${req.query.name}`);
+    res.send(`Hello World from Docker! Written by ${req.params.name}`);
 }
 
 exports.helloWorldButNotReally = (req, res) => {

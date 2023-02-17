@@ -3,6 +3,7 @@ exports.helloWorld = (req, res) => {
 }
 
 exports.helloWorldWithCustomName = (req, res) => {
+    // req.body.name -> req.params.name
     res.send(`Hello World from Docker! Written by ${req.params.name}`);
 }
 

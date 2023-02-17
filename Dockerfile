@@ -1,12 +1,20 @@
-FROM node:latest
+# Specify the base image to 18-alpine
+FROM node:18-alpine
 
-RUN mkdir -p /usr/src/app
+# Set the working directory inside the container
+WORKDIR /app
 
-WORKDIR /usr/src/app
+# Copy package.json and package-lock.json to the container
+COPY package*.json ./
 
-COPY . .
-
+# Install dependencies
 RUN npm install
 
+# Copy the rest of the application files to the container
+COPY . .
+
+# Expose the port used by the application
 EXPOSE 4000
+
+# Start the application
 CMD ["node", "app.js"]
